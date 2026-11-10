@@ -51,15 +51,25 @@ Dos jugadores comparten un mismo teclado (o gamepads) controlando a **Tomás** (
 
 ---
 
-### Fase 2 — Mecánicas de puzle cooperativo (2-3 semanas)
+### Fase 2 — Mecánicas de puzle cooperativo ✅ DESARROLLADA
 
 **Objetivo:** Introducir elementos que obliguen a los dos jugadores a colaborar.
 
-- [ ] **Botón de presión dual:** Dos botones en el suelo que deben mantenerse presionados simultáneamente por Tom y Jaimito para abrir una puerta.
-- [ ] **Túnel pequeño:** Hueco por el que solo Jaimito puede pasar para activar un interruptor al otro lado y abrirle el paso a Tom.
-- [ ] **Puerta cerrada:** Se abre solo cuando ambos botones están activos.
-- [ ] **Objetivo de nivel:** Meta común (queso o salida) que requiere que ambos jugadores lleguen juntos.
-- [ ] **Cajas / objetos empujables:** Tom puede empujar cajas pesadas; Jaimito puede arrastrar objetos ligeros o queso como cebo.
+**Entregables creados:**
+- [x] `Assets/Scripts/Puzzles/PressureButton.cs` — botón de presión que detecta jugadores y notifica a listeners.
+- [x] `Assets/Scripts/Puzzles/Door.cs` — puerta que se abre cuando se activan los botones vinculados (requiere 1 o 2 botones).
+- [x] `Assets/Scripts/Puzzles/Tunnel.cs` — túnel que filtra por etiqueta (solo Jaimito puede pasar, Tom es bloqueado).
+- [x] `Assets/Scripts/Puzzles/LevelGoal.cs` — meta de nivel que se completa solo cuando Tom y Jaimito están juntos dentro.
+- [x] `Assets/Scripts/Puzzles/PushableBox.cs` — caja empujable con tipos (Normal, Pesada, Ligera) y multiplicadores por personaje.
+
+**Pendiente en el Editor de Unity (configuración manual):**
+- [ ] Crear etiquetas `Tom` y `Jerry` en el TagManager y asignarlas a los personajes.
+- [ ] Crear capa `Ground` y asignarla a plataformas (si no se hizo en Fase 1).
+- [ ] Colocar al menos dos `PressureButton` en el nivel y vincularlos a una `Door`.
+- [ ] Colocar un `Tunnel` que solo Jaimito pueda cruzar para llegar al otro lado de un obstáculo.
+- [ ] Colocar un `LevelGoal` en la meta del nivel.
+- [ ] Colocar `PushableBox` para puzles de empujar cajas.
+- [ ] Diseñar un nivel donde ninguno de los dos pueda completar el puzle solo.
 
 **Criterio de aceptación:** Existe al menos un nivel donde ninguno de los dos puede completar el puzle sin la ayuda del otro.
 
