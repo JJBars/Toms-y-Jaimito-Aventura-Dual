@@ -1,90 +1,65 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class TomMove : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private GroundCheck groundCheck;
-
-    public float salto = 5f;
+    public float moveSpeed = 5f;
+    public float jumpForce = 7f;
     private Rigidbody2D body;
     private float horizontalInput;
-    private bool jumpHeld;
-    private bool jumpStarted;
-    private bool hasLeftGround;
+    private bool isGrounded;
+    private bool jumpRequested;
 
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-
-        if (groundCheck == null)
-        {
-            Debug.LogError("TomMove necesita una referencia a GroundCheck.", this);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-        }
-
         horizontalInput = 0f;
 
         if (Input.GetKey(KeyCode.A))
         {
             horizontalInput = -1f;
         }
-
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             horizontalInput = 1f;
         }
 
-        jumpHeld = Input.GetButton("Jump");
-
-        if (Input.GetButtonUp("Jump") && body != null && body.linearVelocity.y > 0f)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            body.linearVelocity = new Vector2(body.linearVelocity.x, 0f);
+            jumpRequested = true;
         }
-
     }
 
     void FixedUpdate()
     {
-        if (body == null || groundCheck == null)
+        Vector2 velocity = body.linearVelocity;
+        velocity.x = horizontalInput * moveSpeed;
+
+        if (jumpRequested && isGrounded)
         {
-            return;
+            velocity.y = jumpForce;
+            isGrounded = false;
         }
 
-        body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocity.y);
+        body.linearVelocity = velocity;
+        jumpRequested = false;
+    }
 
-        if (!groundCheck.IsGrounded)
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.transform.position.y < transform.position.y && body.linearVelocity.y <= 0f)
         {
-            if (jumpStarted)
-            {
-                hasLeftGround = true;
-            }
-
-            return;
+            isGrounded = true;
         }
+    }
 
-        if (jumpStarted && hasLeftGround)
-        {
-            jumpStarted = false;
-            hasLeftGround = false;
-        }
-
-        if (jumpHeld && !jumpStarted)
-        {
-            body.linearVelocity = new Vector2(body.linearVelocity.x, salto);
-            jumpStarted = true;
-        }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 }

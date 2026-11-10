@@ -1,0 +1,808 @@
+fileFormatVersion: 2
+guid: 42cfd582c5d75704c8647ce5a590933c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6795638656640133937
+    second: Jerry_animaciones_0
+  - first:
+      213: 6597415104557078154
+    second: Jerry_animaciones_1
+  - first:
+      213: -21815984731015193
+    second: Jerry_animaciones_2
+  - first:
+      213: 8292534285840217551
+    second: Jerry_animaciones_3
+  - first:
+      213: -3803873169509591286
+    second: Jerry_animaciones_4
+  - first:
+      213: 1742295886149359421
+    second: Jerry_animaciones_5
+  - first:
+      213: -6263638571225488499
+    second: Jerry_animaciones_6
+  - first:
+      213: -7066671156395731093
+    second: Jerry_animaciones_7
+  - first:
+      213: 6166510378324110568
+    second: Jerry_animaciones_8
+  - first:
+      213: -8654258554162436140
+    second: Jerry_animaciones_9
+  - first:
+      213: -8147092501166139246
+    second: Jerry_animaciones_10
+  - first:
+      213: 9159847486896615314
+    second: Jerry_animaciones_11
+  - first:
+      213: -8061972779068591669
+    second: Jerry_animaciones_12
+  - first:
+      213: 2423885997293779088
+    second: Jerry_animaciones_13
+  - first:
+      213: 1334001168729685137
+    second: Jerry_animaciones_14
+  - first:
+      213: 5795433996379128819
+    second: Jerry_animaciones_15
+  - first:
+      213: 4753935054409199181
+    second: Jerry_animaciones_16
+  - first:
+      213: 100533771595352366
+    second: Jerry_animaciones_17
+  - first:
+      213: -1701724074408775432
+    second: Jerry_animaciones_18
+  - first:
+      213: 1386538539587578219
+    second: Jerry_animaciones_19
+  - first:
+      213: -8711722187723700890
+    second: Jerry_animaciones_20
+  - first:
+      213: 1781143553735773312
+    second: Jerry_animaciones_21
+  - first:
+      213: 5647886293967116328
+    second: Jerry_animaciones_22
+  - first:
+      213: -3413985585289455688
+    second: Jerry_animaciones_23
+  - first:
+      213: 5859835618427775189
+    second: Jerry_animaciones_24
+  - first:
+      213: -422771216473637684
+    second: Jerry_animaciones_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Jerry_animaciones_1
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 858
+        width: 150
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86dbee351abe8b50800000000000000
+      internalID: 6597415104557078154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_2
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 858
+        width: 150
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7beab3a7e72bff0800000000000000
+      internalID: -21815984731015193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_3
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 858
+        width: 150
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5f04b4ffff41370800000000000000
+      internalID: 8292534285840217551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 858
+        width: 150
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07ddb0918de53bc0800000000000000
+      internalID: -3803873169509591286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_5
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 858
+        width: 150
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d379e8b90e0ed2810800000000000000
+      internalID: 1742295886149359421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 670
+        width: 180
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8824af6f302f11a40b75c5b1599ca57e
+      internalID: -6795638656640133937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 670
+        width: 180
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718f8246600808d44bc3a51ed53f213f
+      internalID: -6263638571225488499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_7
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 670
+        width: 180
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b6a68aa8b3a404ab29938cdb9f1cd3
+      internalID: -7066671156395731093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_8
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 670
+        width: 180
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25f4e1faaee6844692b6b0e2a808a6a
+      internalID: 6166510378324110568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_9
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 670
+        width: 169
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bbce0d0defc8342945a860ae6d0f8a
+      internalID: -8654258554162436140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_10
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 670
+        width: 180
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464fabfd7799a1843b3ba249dafb2606
+      internalID: -8147092501166139246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_11
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 670
+        width: 180
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30760dabf9702f46bd24c9d37bcf1a1
+      internalID: 9159847486896615314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_12
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 670
+        width: 182
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa31714fd087ed4bbf58561d8e3980f
+      internalID: -8061972779068591669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_13
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 475
+        width: 180
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967d91f640d71134f90120a2de0c549c
+      internalID: 2423885997293779088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_14
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 486
+        width: 175
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9367e48f59ed59845b069487cb58db55
+      internalID: 1334001168729685137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_15
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 495
+        width: 175
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5213df2f6a148ab4fb6407945064b33d
+      internalID: 5795433996379128819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_16
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 499
+        width: 165
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd12ecc0fc671041a9053400bb91a62
+      internalID: 4753935054409199181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_17
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 485
+        width: 170
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43744e13756067478b3063c93a07384
+      internalID: 100533771595352366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_18
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 477
+        width: 180
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1568ab591f9307e44a17ddd3f5cea7a4
+      internalID: -1701724074408775432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_19
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 472
+        width: 180
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e825df8562bcf994f90511780273143a
+      internalID: 1386538539587578219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 135
+        width: 160
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5d128d07f397e47b1809f596a2bcc0
+      internalID: -8711722187723700890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_21
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 131
+        width: 179
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec4d2a8d91d49d418c5e5e1b151561d
+      internalID: 1781143553735773312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_22
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 135
+        width: 178
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e224e1311670a49a25e5214094cfcf
+      internalID: 5647886293967116328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_23
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 126
+        width: 163
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294d02ade16568e42b808ddacd039c9b
+      internalID: -3413985585289455688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_24
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 127
+        width: 159
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccfa9ae0c7c716449e9538fb0c3a7e2
+      internalID: 5859835618427775189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jerry_animaciones_25
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 127
+        width: 161
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e20c88871e2d849a5350fbffd684a0
+      internalID: -422771216473637684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ade31de45b735eb42b97e1a22d283b31
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Jerry_animaciones_0: -6795638656640133937
+      Jerry_animaciones_1: 6597415104557078154
+      Jerry_animaciones_10: -8147092501166139246
+      Jerry_animaciones_11: 9159847486896615314
+      Jerry_animaciones_12: -8061972779068591669
+      Jerry_animaciones_13: 2423885997293779088
+      Jerry_animaciones_14: 1334001168729685137
+      Jerry_animaciones_15: 5795433996379128819
+      Jerry_animaciones_16: 4753935054409199181
+      Jerry_animaciones_17: 100533771595352366
+      Jerry_animaciones_18: -1701724074408775432
+      Jerry_animaciones_19: 1386538539587578219
+      Jerry_animaciones_2: -21815984731015193
+      Jerry_animaciones_20: -8711722187723700890
+      Jerry_animaciones_21: 1781143553735773312
+      Jerry_animaciones_22: 5647886293967116328
+      Jerry_animaciones_23: -3413985585289455688
+      Jerry_animaciones_24: 5859835618427775189
+      Jerry_animaciones_25: -422771216473637684
+      Jerry_animaciones_3: 8292534285840217551
+      Jerry_animaciones_4: -3803873169509591286
+      Jerry_animaciones_5: 1742295886149359421
+      Jerry_animaciones_6: -6263638571225488499
+      Jerry_animaciones_7: -7066671156395731093
+      Jerry_animaciones_8: 6166510378324110568
+      Jerry_animaciones_9: -8654258554162436140
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
