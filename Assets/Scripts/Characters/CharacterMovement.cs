@@ -15,13 +15,19 @@ public abstract class CharacterMovement : MonoBehaviour
     [Tooltip("Objeto hijo posicionado en los pies del personaje para detectar el suelo")]
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckRadius = 0.2f;
+    [SerializeField] protected float groundCheckDistance = 0.12f;
     [Tooltip("Capa que se considera como suelo")]
     [SerializeField] protected LayerMask groundLayer;
+    [SerializeField] private float jumpBufferTime = 0.15f;
+    [SerializeField] private float coyoteTime = 0.12f;
 
     protected Rigidbody2D body;
     protected float horizontalInput;
     protected bool isGrounded;
     protected bool jumpRequested;
+    private Collider2D characterCollider;
+    private float jumpBufferCounter;
+    private float coyoteTimeCounter;
 
     protected virtual void Awake()
     {
@@ -34,6 +40,7 @@ public abstract class CharacterMovement : MonoBehaviour
         body.gravityScale = 3f;
         body.freezeRotation = true;
         body.linearVelocity = Vector2.zero;
+        characterCollider = GetComponent<Collider2D>();
 
         // Si no se asignó un GroundCheck, crear uno automáticamente en los pies
         if (groundCheck == null)
@@ -48,21 +55,30 @@ public abstract class CharacterMovement : MonoBehaviour
     protected virtual void Update()
     {
         horizontalInput = 0f;
+        jumpBufferCounter = Mathf.Max(0f, jumpBufferCounter - Time.deltaTime);
 
         // Cada personaje define sus propias teclas en ReadInput()
         ReadInput();
-
-        // Ejecutar salto solicitado
-        if (jumpRequested && isGrounded)
+        if (jumpRequested)
         {
+            jumpBufferCounter = jumpBufferTime;
             jumpRequested = false;
-            Jump();
         }
     }
 
     protected virtual void FixedUpdate()
     {
         CheckGround();
+        coyoteTimeCounter = isGrounded
+            ? coyoteTime
+            : Mathf.Max(0f, coyoteTimeCounter - Time.fixedDeltaTime);
+
+        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
+        {
+            jumpBufferCounter = 0f;
+            coyoteTimeCounter = 0f;
+            Jump();
+        }
 
         Vector2 velocity = body.linearVelocity;
         velocity.x = horizontalInput * moveSpeed;
@@ -88,7 +104,23 @@ public abstract class CharacterMovement : MonoBehaviour
     /// </summary>
     protected virtual void CheckGround()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (characterCollider == null)
+        {
+            isGrounded = groundCheck != null
+                && Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            return;
+        }
+
+        Bounds bounds = characterCollider.bounds;
+        Vector2 origin = new Vector2(bounds.center.x, bounds.min.y + 0.03f);
+        Vector2 sensorSize = new Vector2(Mathf.Max(bounds.size.x * 0.75f, 0.12f), 0.06f);
+        isGrounded = Physics2D.BoxCast(
+            origin,
+            sensorSize,
+            0f,
+            Vector2.down,
+            groundCheckDistance,
+            groundLayer);
     }
 
     protected virtual void OnDrawGizmosSelected()
@@ -97,6 +129,15 @@ public abstract class CharacterMovement : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
+
+        if (characterCollider != null)
+        {
+            Bounds bounds = characterCollider.bounds;
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireCube(
+                new Vector3(bounds.center.x, bounds.min.y + 0.03f - groundCheckDistance * 0.5f, bounds.center.z),
+                new Vector3(Mathf.Max(bounds.size.x * 0.75f, 0.12f), 0.06f + groundCheckDistance, 0f));
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -14,15 +15,15 @@ public class LevelGoal : MonoBehaviour
     [Tooltip("Etiqueta de Jaimito")]
     [SerializeField] private string jerryTag = "Jerry";
 
-    private bool tomInside;
-    private bool jerryInside;
+    private readonly HashSet<Collider2D> tomColliders = new HashSet<Collider2D>();
+    private readonly HashSet<Collider2D> jerryColliders = new HashSet<Collider2D>();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(tomTag))
-            tomInside = true;
+            tomColliders.Add(other);
         else if (other.CompareTag(jerryTag))
-            jerryInside = true;
+            jerryColliders.Add(other);
 
         CheckCompletion();
     }
@@ -30,14 +31,14 @@ public class LevelGoal : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(tomTag))
-            tomInside = false;
+            tomColliders.Remove(other);
         else if (other.CompareTag(jerryTag))
-            jerryInside = false;
+            jerryColliders.Remove(other);
     }
 
     private void CheckCompletion()
     {
-        if (tomInside && jerryInside)
+        if (tomColliders.Count > 0 && jerryColliders.Count > 0)
         {
             Debug.Log("¡Ambos jugadores llegaron a la meta!");
             GameManager.Instance?.CompleteLevel();

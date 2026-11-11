@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -8,56 +9,69 @@ using UnityEngine;
 public class PressureButton : MonoBehaviour
 {
     [Header("Configuración")]
-    [Tooltip("Etiqueta de los personajes que pueden activar el botón")]
-    [SerializeField] private string playerTag = "Player";
+    [Tooltip("Etiquetas de los personajes que pueden activar el botón")]
+    [SerializeField] private string[] playerTags = { "Tom", "Jerry" };
 
     [Tooltip("Objetos a notificar cuando el botón cambia de estado")]
-    [SerializeField] private PressureButtonListener[] listeners;
+    [SerializeField] private MonoBehaviour[] listeners;
 
     [Tooltip("Tiempo mínimo que debe mantenerse presionado (segundos)")]
     [SerializeField] private float holdTime = 0f;
 
     private bool isPressed;
     private float pressTimer;
-    private GameObject pressingPlayer;
+    private readonly HashSet<Collider2D> playerColliders = new HashSet<Collider2D>();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag(playerTag)) return;
-        if (pressingPlayer != null) return; // Ya hay alguien pisando
+        if (!IsPlayer(other)) return;
+        if (!playerColliders.Add(other)) return;
 
-        pressingPlayer = other.gameObject;
-        pressTimer = 0f;
-
-        if (holdTime <= 0f)
+        if (playerColliders.Count == 1)
         {
-            SetPressed(true);
+            pressTimer = 0f;
+
+            if (holdTime <= 0f)
+                SetPressed(true);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void Update()
     {
-        if (!other.CompareTag(playerTag)) return;
-        if (pressingPlayer == null) return;
-
-        if (holdTime > 0f)
+        if (holdTime > 0f && playerColliders.Count > 0 && !isPressed)
         {
             pressTimer += Time.deltaTime;
-            if (pressTimer >= holdTime && !isPressed)
-            {
+            if (pressTimer >= holdTime)
                 SetPressed(true);
-            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.CompareTag(playerTag)) return;
-        if (other.gameObject != pressingPlayer) return;
+        if (!IsPlayer(other) || !playerColliders.Remove(other)) return;
 
-        pressingPlayer = null;
-        pressTimer = 0f;
-        SetPressed(false);
+        if (playerColliders.Count == 0)
+        {
+            pressTimer = 0f;
+            SetPressed(false);
+        }
+    }
+
+    private bool IsPlayer(Collider2D other)
+    {
+        if (playerTags == null) return false;
+
+        GameObject player = other.attachedRigidbody != null
+            ? other.attachedRigidbody.gameObject
+            : other.gameObject;
+
+        foreach (string tag in playerTags)
+        {
+            if (!string.IsNullOrEmpty(tag) && player.CompareTag(tag))
+                return true;
+        }
+
+        return false;
     }
 
     private void SetPressed(bool pressed)
@@ -65,13 +79,20 @@ public class PressureButton : MonoBehaviour
         if (isPressed == pressed) return;
         isPressed = pressed;
 
-        foreach (var listener in listeners)
+        if (listeners != null)
         {
-            listener?.OnButtonStateChanged(this, isPressed);
+            foreach (MonoBehaviour listener in listeners)
+            {
+                if (listener is PressureButtonListener pressureButtonListener)
+                    pressureButtonListener.OnButtonStateChanged(this, isPressed);
+            }
         }
+
+        StateChanged?.Invoke(this, isPressed);
     }
 
     public bool IsPressed => isPressed;
+    public event System.Action<PressureButton, bool> StateChanged;
 }
 
 /// <summary>

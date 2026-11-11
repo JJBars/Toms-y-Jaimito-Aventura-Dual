@@ -13,7 +13,7 @@ public class JerryMovement : CharacterMovement
 
         // Valores diferenciados para Jaimito
         moveSpeed = 6f;          // más rápido
-        jumpForce = 9f;          // salta más alto
+        jumpForce = 12.5f;       // salta más alto que Tom
         body.gravityScale = 2.5f;// más ligero, cae más suave
     }
 
@@ -24,7 +24,7 @@ public class JerryMovement : CharacterMovement
         else if (Input.GetKey(KeyCode.RightArrow))
             horizontalInput = 1f;
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
             jumpRequested = true;
     }
 }

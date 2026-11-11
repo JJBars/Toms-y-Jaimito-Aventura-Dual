@@ -13,7 +13,7 @@ public class TomMovement : CharacterMovement
 
         // Valores diferenciados para Tom
         moveSpeed = 4f;          // más lento
-        jumpForce = 6f;          // salta menos alto
+        jumpForce = 12f;         // impulso suficiente para superar plataformas
         body.gravityScale = 3.5f;// más pesado, cae más rápido
     }
 
@@ -24,7 +24,7 @@ public class TomMovement : CharacterMovement
         else if (Input.GetKey(KeyCode.D))
             horizontalInput = 1f;
 
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.W))
             jumpRequested = true;
     }
 }

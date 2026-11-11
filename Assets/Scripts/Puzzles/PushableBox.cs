@@ -1,9 +1,9 @@
 using UnityEngine;
 
 /// <summary>
-• Caja empujable para puzles de plataforma.
-• Tom puede empujar cajas pesadas (más lentas).
-• Jaimito puede empujar cajas ligeras (más rápidas).
+/// Caja empujable para puzles de plataforma.
+/// Tom puede empujar cajas pesadas (más lentas).
+/// Jaimito puede empujar cajas ligeras (más rápidas).
 /// </summary>
 public class PushableBox : MonoBehaviour
 {

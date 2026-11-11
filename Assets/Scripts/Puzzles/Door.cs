@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -22,12 +23,13 @@ public class Door : MonoBehaviour, PressureButtonListener
     [Tooltip("Sprite de puerta abierta (opcional)")]
     [SerializeField] private Sprite openSprite;
 
-    private int activeButtons;
+    private readonly HashSet<PressureButton> activeButtons = new HashSet<PressureButton>();
     private Vector3 closedPosition;
     private Vector3 openPosition;
     private bool isOpen;
     private SpriteRenderer spriteRenderer;
     private float targetY;
+    private bool puzzleOpen;
 
     private void Awake()
     {
@@ -40,18 +42,30 @@ public class Door : MonoBehaviour, PressureButtonListener
     public void OnButtonStateChanged(PressureButton button, bool isPressed)
     {
         if (isPressed)
-            activeButtons++;
+            activeButtons.Add(button);
         else
-            activeButtons--;
+            activeButtons.Remove(button);
 
-        bool shouldBeOpen = activeButtons >= requiredButtons;
+        UpdateDoorState();
+    }
+
+    public void SetPuzzleOpen(bool open)
+    {
+        puzzleOpen = open;
+        UpdateDoorState();
+    }
+
+    private void UpdateDoorState()
+    {
+        bool shouldBeOpen = puzzleOpen || activeButtons.Count >= requiredButtons;
         if (shouldBeOpen != isOpen)
         {
             isOpen = shouldBeOpen;
             targetY = isOpen ? openPosition.y : closedPosition.y;
 
-            if (spriteRenderer != null)
-                spriteRenderer.sprite = isOpen ? openSprite : closedSprite;
+            Sprite nextSprite = isOpen ? openSprite : closedSprite;
+            if (spriteRenderer != null && nextSprite != null)
+                spriteRenderer.sprite = nextSprite;
         }
     }
 
